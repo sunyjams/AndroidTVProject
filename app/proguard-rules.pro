@@ -26,7 +26,7 @@
 # 代码压缩比 5
 -optimizationpasses 5
 # 忽略警告
--ignorewarning
+# -ignorewarning
 # 不适用大小写混合
 -dontusemixedcaseclassnames
 # 不去忽略非公共库的类
@@ -62,6 +62,7 @@
 -keep public class * extends android.content.ContentProvider
 -keep public class * extends android.app.backup.BackupAgentHelper
 -keep public class * extends android.preference.Preference
+-keep public class * extends andriod.view.View
 -keep public class com.android.vending.licensing.ILicensingService
 
 # 保持 native 方法不被混淆
@@ -84,6 +85,11 @@
     public <init>(android.content.Context, android.util.AttributeSet);
     public <init>(android.content.Context, android.util.AttributeSet, int);
     public void set*(...);
+}
+
+# 确保 layout 里面写的 onClick 不被影响
+-keepclassmembers class * extends android.app.Activity{
+    public void *(android.view.View);
 }
 
 # 保持枚举 enum 类不被混淆
