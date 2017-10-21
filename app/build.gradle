@@ -5,11 +5,10 @@ android {
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.sunyjams.domain"
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -23,5 +22,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:design:24.2.0'
     compile project(':Commonlib')
 }
