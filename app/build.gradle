@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.sunyjams.domain"
         minSdkVersion 21
@@ -21,7 +21,15 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.android.support:design:24.2.0'
+    compile 'com.android.support:multidex:1.0.2'
+
+    // net framework
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.12'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
     compile project(':Commonlib')
 }
