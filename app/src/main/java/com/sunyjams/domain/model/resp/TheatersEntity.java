@@ -58,4 +58,15 @@ public class TheatersEntity {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    @Override
+    public String toString() {
+        return "TheatersEntity{" +
+                "count=" + count +
+                ", start=" + start +
+                ", total=" + total +
+                ", subjects=" + subjects +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }

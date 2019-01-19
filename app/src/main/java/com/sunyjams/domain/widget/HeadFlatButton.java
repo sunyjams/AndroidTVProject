@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
 import com.sunyjams.common.utils.ScaleViewUtils;
 import com.sunyjams.domain.R;
 
@@ -62,7 +61,7 @@ public class HeadFlatButton extends LinearLayout {
 
     public void setHeadIcon(String url) {
         if (!TextUtils.isEmpty(url)) {
-            Picasso.with(getContext().getApplicationContext()).load(url).into(mImageView);
+//            Picasso.with(getContext().getApplicationContext()).load(url).into(mImageView);
         }
     }
 

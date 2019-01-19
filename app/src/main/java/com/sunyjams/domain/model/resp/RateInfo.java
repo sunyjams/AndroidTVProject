@@ -12,7 +12,7 @@ public class RateInfo {
 
     private Integer max;
 
-    private Integer average;
+    private Float average;
 
     private RateDetail details;
 
@@ -28,11 +28,11 @@ public class RateInfo {
         this.max = max;
     }
 
-    public Integer getAverage() {
+    public Float getAverage() {
         return average;
     }
 
-    public void setAverage(Integer average) {
+    public void setAverage(Float average) {
         this.average = average;
     }
 
