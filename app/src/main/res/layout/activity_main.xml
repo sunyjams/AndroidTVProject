@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.FloatingActionButton
+    <Button
+        android:id="@+id/floating_btn"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:background="@color/colorPrimary"
-        android:src="@mipmap/ic_done_black"
         android:tint="@color/colorContent" />
 
 </LinearLayout>

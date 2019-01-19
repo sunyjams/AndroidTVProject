@@ -1,16 +1,13 @@
 package com.sunyjams.domain.model.resp;
 
-import java.util.List;
-
 /**
  * Created by James
- * Date 2019/1/17.
- * description
+ * Date 2019/1/18.
+ * description 艺术家，包括导演和演员
  */
+public class Artist {
 
-public class Actor {
-
-    private List<Avatar> avatars;
+    private Avatar avatars;
 
     /**
      * 英文名
@@ -18,25 +15,25 @@ public class Actor {
     private String name_en;
 
     /**
-     * 中文名
+     * 名字
      */
     private String name;
 
     /**
-     * 演员主页
+     * 详细信息
      */
     private String alt;
 
     /**
-     * 演员Id
+     * id
      */
     private String id;
 
-    public List<Avatar> getAvatars() {
+    public Avatar getAvatars() {
         return avatars;
     }
 
-    public void setAvatars(List<Avatar> avatars) {
+    public void setAvatars(Avatar avatars) {
         this.avatars = avatars;
     }
 
