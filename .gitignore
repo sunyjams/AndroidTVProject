@@ -3,7 +3,7 @@
 ### Example user template
 
 # IntelliJ project files
-.idea
+.idea/
 *.iml
 build/
 .gradle
@@ -11,6 +11,5 @@ out
 gen
 .gradle/
 Commonlib/build/
-Commonlib/libs/
 app/build/
 local.properties

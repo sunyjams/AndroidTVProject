@@ -1,6 +1,5 @@
 package com.sunyjams.domain.view;
 
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,7 +16,6 @@ import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -140,23 +138,7 @@ public class TheaterFragment extends BrowseFragment {
 
             if (item instanceof Theater) {
                 Theater movie = (Theater) item;
-                Log.d(TAG, "Item: " + item.toString());
-//                Intent intent = new Intent(getActivity(), DetailsActivity.class);
-//                intent.putExtra(DetailsActivity.MOVIE, movie);
-//
-//                Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(
-//                        getActivity(),
-//                        ((ImageCardView) itemViewHolder.view).getMainImageView(),
-//                        DetailsActivity.SHARED_ELEMENT_NAME).toBundle();
-//                getActivity().startActivity(intent, bundle);
-            } else if (item instanceof String) {
-//                if (((String) item).contains(getString(R.string.error_fragment))) {
-//                    Intent intent = new Intent(getActivity(), BrowseErrorActivity.class);
-//                    startActivity(intent);
-//                } else {
-//                    Toast.makeText(getActivity(), ((String) item), Toast.LENGTH_SHORT)
-//                            .show();
-//                }
+                MovieActivity.start(getActivity(), movie.getId());
             }
         }
     }

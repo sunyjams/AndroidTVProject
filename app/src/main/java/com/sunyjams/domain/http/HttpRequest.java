@@ -18,6 +18,7 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.adapter.rxjava2.HttpException;
+import retrofit2.http.Path;
 
 /**
  * 发起网络请求的类
@@ -75,6 +76,22 @@ public abstract class HttpRequest<T> {
             Object service = RetroManager.getInstance().createService(clazz);
             observable = (Observable) method.invoke(service, requestBody);
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (observable == null) {
+            throw new IllegalArgumentException("observable can not be null");
+        }
+        subscriber(observable, subscriber);
+    }
+
+    public synchronized void get(Class<?> clazz, String methodName, String value){
+        Observable observable = null;
+        try{
+            Method method = clazz.getMethod(methodName, String.class, Map.class);
+            Object service = RetroManager.getInstance().createService(clazz);
+            observable = (Observable) method.invoke(service, value, createJson());
+        }catch (Exception e){
             e.printStackTrace();
         }
 

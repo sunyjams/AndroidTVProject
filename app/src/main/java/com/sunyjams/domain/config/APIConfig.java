@@ -17,5 +17,10 @@ public class APIConfig {
          * 正在热映
          */
         public static final String IN_THREATERS = "in_theaters";
+
+        /**
+         * 电影详情
+         */
+        public static final String MOVIE_INFO = "subject/{id}";
     }
 }
