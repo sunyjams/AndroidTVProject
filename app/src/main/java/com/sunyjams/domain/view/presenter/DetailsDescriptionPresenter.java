@@ -1,6 +1,5 @@
 package com.sunyjams.domain.view.presenter;
 
-import android.graphics.Movie;
 import android.support.v17.leanback.widget.AbstractDetailsDescriptionPresenter;
 
 import com.sunyjams.domain.model.resp.MovieIntro;
@@ -17,7 +16,7 @@ public class DetailsDescriptionPresenter extends AbstractDetailsDescriptionPrese
         MovieIntro movie = (MovieIntro) item;
         if (movie != null) {
             vh.getTitle().setText(movie.getTitle());
-            vh.getSubtitle().setText(movie.getOriginal_title());
+            vh.getSubtitle().setText("豆瓣评分：" + movie.getRating().getAverage());
             vh.getBody().setText(movie.getSummary());
         }
     }

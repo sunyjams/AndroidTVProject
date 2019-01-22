@@ -4,8 +4,17 @@
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
 
     <application
+        android:banner="@mipmap/ic_launcher"
         android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +28,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.MovieActivity" />
+        <activity android:name=".view.PlayVideoActivity" />
     </application>
 
 </manifest>

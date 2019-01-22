@@ -55,16 +55,22 @@ public class MovieFragment extends DetailsFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        movie = ((MovieActivity)getActivity()).getMovieInfo();
+
         mBackground = new DetailsFragmentBackgroundController(this);
         mSelector = new ClassPresenterSelector();
         mAdapter = new ArrayObjectAdapter(mSelector);
 
-        movie = ((MovieActivity)getActivity()).getMovieInfo();
         setupDetailsOverviewRow();
         setupDetailsOverviewRowPresenter();
         setupRelatedMovieListRow();
+        setAdapter(mAdapter);
         initializeBackground();
         setOnItemViewClickedListener(new ItemViewClickedListener());
+    }
+
+    public static MovieFragment newInstance(){
+        return new MovieFragment();
     }
 
     private void setupDetailsOverviewRow(){
@@ -157,6 +163,7 @@ public class MovieFragment extends DetailsFragment {
 
         ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new TrailerPresenter());
         for (Trailer trailer : list) {
+            trailer.setArtist(movie.getDirectors().get(0));
             listRowAdapter.add(trailer);
         }
 
@@ -170,9 +177,8 @@ public class MovieFragment extends DetailsFragment {
         @Override
         public void onItemClicked(Presenter.ViewHolder itemViewHolder, Object item,
                                   RowPresenter.ViewHolder rowViewHolder, Row row) {
-
-            if (item instanceof MovieIntro) {
-
+            if (item instanceof Trailer) {
+                PlayVideoActivity.start(getActivity(), ((Trailer) item).getTitle(), ((Trailer) item).getArtist().getName(), ((Trailer) item).getResource_url());
             }
         }
     }
